@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springboot.keyan.mapper.FeedbackMapper">
+
+    <!--列表分页-->
+    <select id="getPageList" resultType="com.springboot.keyan.entity.vo.FeedbackView" parameterType="com.springboot.keyan.entity.Feedback">
+        select ta.*,ug.username from feedback ta
+        LEFT JOIN userlogin ug on ug.userid=ta.userid
+        where 1=1
+        <if test="obj.state!=null and obj.state!=0">
+            and ta.state=#{obj.state}
+        </if>
+        <if test="obj.quetitle!=null and obj.quetitle!=''">
+            and ta.quetitle like concat('%',#{obj.quetitle},'%')
+        </if>
+    </select>
+
+
+</mapper>

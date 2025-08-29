@@ -1,0 +1,32 @@
+server:
+  port: 8080
+  #port: 80
+# 配置日志打印级别
+logging:
+  level:
+    com.springboot.keyan.mapper: debug
+# 配置静态文件引用目录
+wyait:
+  picpath: D:/images/
+# spring相关配置
+spring:
+  datasource:
+    name: test
+    url: jdbc:mysql://127.0.0.1/keyan?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 2004825
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    filters: stat
+    maxActive: 20
+    initialSize: 2
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    testWhileIdle: true
+    validationQuery: SELECT 1
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: false
+    maxOpenPreparedStatements: 20

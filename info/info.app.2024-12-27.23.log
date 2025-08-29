@@ -1,0 +1,11 @@
+2024-12-27 23:20:29 | [39mDEBUG[0;39m | [1;33mXNIO-2 task-29[0;39m | [1;32mcom.springboot.keyan.mapper.UserloginMapper.selectById[0;39m | ==>  Preparing: SELECT userid,regtime,password,state,type,username FROM userlogin WHERE userid=? 
+2024-12-27 23:20:29 | [39mDEBUG[0;39m | [1;33mXNIO-2 task-29[0;39m | [1;32mcom.springboot.keyan.mapper.UserloginMapper.selectById[0;39m | ==> Parameters: 7(Integer)
+2024-12-27 23:20:29 | [39mDEBUG[0;39m | [1;33mXNIO-2 task-29[0;39m | [1;32mcom.springboot.keyan.mapper.UserloginMapper.selectById[0;39m | <==      Total: 1
+2024-12-27 23:20:29 | [39mDEBUG[0;39m | [1;33mXNIO-2 task-29[0;39m | [1;32mcom.springboot.keyan.mapper.TeammemberMapper.selectOne[0;39m | ==>  Preparing: SELECT teamid,searchresults,searchinfo,phonenum,audituserid,opinion,meminfo,memname,searchdir,searchbg,state,updatetime,job,memid FROM teammember WHERE (memid = ?) 
+2024-12-27 23:20:29 | [39mDEBUG[0;39m | [1;33mXNIO-2 task-29[0;39m | [1;32mcom.springboot.keyan.mapper.TeammemberMapper.selectOne[0;39m | ==> Parameters: 7(Integer)
+2024-12-27 23:20:29 | [39mDEBUG[0;39m | [1;33mXNIO-2 task-29[0;39m | [1;32mcom.springboot.keyan.mapper.TeammemberMapper.selectOne[0;39m | <==      Total: 1
+2024-12-27 23:20:34 | [39mDEBUG[0;39m | [1;33mXNIO-2 task-31[0;39m | [1;32mcom.springboot.keyan.mapper.FeedbackMapper.getPageList[0;39m | ==>  Preparing: SELECT COUNT(1) FROM feedback ta LEFT JOIN userlogin ug ON ug.userid = ta.userid WHERE 1 = 1 
+2024-12-27 23:20:34 | [39mDEBUG[0;39m | [1;33mXNIO-2 task-31[0;39m | [1;32mcom.springboot.keyan.mapper.FeedbackMapper.getPageList[0;39m | ==> Parameters: 
+2024-12-27 23:20:34 | [39mDEBUG[0;39m | [1;33mXNIO-2 task-31[0;39m | [1;32mcom.springboot.keyan.mapper.FeedbackMapper.getPageList[0;39m | ==>  Preparing: select ta.*,ug.username from feedback ta LEFT JOIN userlogin ug on ug.userid=ta.userid where 1=1 LIMIT ?,? 
+2024-12-27 23:20:34 | [39mDEBUG[0;39m | [1;33mXNIO-2 task-31[0;39m | [1;32mcom.springboot.keyan.mapper.FeedbackMapper.getPageList[0;39m | ==> Parameters: 0(Long), 10(Long)
+2024-12-27 23:20:34 | [39mDEBUG[0;39m | [1;33mXNIO-2 task-31[0;39m | [1;32mcom.springboot.keyan.mapper.FeedbackMapper.getPageList[0;39m | <==      Total: 2

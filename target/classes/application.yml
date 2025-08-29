@@ -1,0 +1,47 @@
+spring:
+  profiles:
+    active: dev   #更改测试环境切换为dev ,正式环境切换为prod
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  mvc:
+    throw-exception-if-no-handler-found : true #页面未找到时抛出异常
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+# sa-token配置
+sa-token:
+  # token名称 (同时也是cookie名称)
+  token-name: Authorization
+  # token有效期，单位s 默认30天, -1代表永不过期（这个token是全局过期时间，如果你设置3分钟，3分钟一到，就过期）
+  timeout: 2592000
+  # token临时有效期 (指定时间内无操作就视为token过期) 单位: 秒（这个临时的意思就是，假如你设置3分钟，3分钟不操作，自动过期）
+  activity-timeout: -1
+  # 是否允许同一账号并发登录 (为true时允许一起登录, 为false时新登录挤掉旧登录)
+  allow-concurrent-login: true
+  # 在多人登录同一账号时，是否共用一个token (为true时所有登录共用一个token, 为false时每次登录新建一个token)
+  is-share: true
+  # token风格
+  token-style: random-128
+  #是否尝试从cookie里读取token
+  isReadCookie: false
+
+# mybatis-plus相关配置
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.springboot.keyan.entity
+  executor-type: simple
+  configuration:
+    auto-mapping-unknown-column-behavior: none
+    auto-mapping-behavior: partial
+    cache-enabled: true
+    call-setters-on-nulls: true
+  global-config:
+    db-config:
+      field-strategy: not_empty
+      db-type: mysql
+      id-type: id_worker
+    banner: false
+    super-mapper-class:
